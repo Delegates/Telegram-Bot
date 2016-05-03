@@ -19,5 +19,10 @@ namespace Bot.Commands
             Start = start;
             Duratation = duratation;
         }
+
+        public override string ToString()
+        {
+            return $"{Name} Начало: {Start} Конец: {Ending}";
+        }
     }
 }
