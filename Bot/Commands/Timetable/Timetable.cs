@@ -7,7 +7,7 @@ using Bot.Parameters;
 
 namespace Bot.Commands
 {
-    class Timetable : ParametrizedCommand<EmptyParameters>
+    public class Timetable : ParametrizedCommand<EmptyParameters>
     {
         #region Расписание
         internal static Dictionary<DayOfWeek, List<Lesson>> timetable = new Dictionary<DayOfWeek, List<Lesson>>
@@ -59,7 +59,7 @@ namespace Bot.Commands
         };
         #endregion
 
-        public override string Name => "Timetable";
+        public override string Name => "timetable";
         public override string Description => "Выводит расписание на сегодня";
         public override string Execute(EmptyParameters parameters)
         {

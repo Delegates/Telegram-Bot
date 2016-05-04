@@ -45,6 +45,7 @@
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\Timetable\Lesson.cs" />
     <Compile Include="Commands\Timetable\Timetable.cs" />
+    <Compile Include="Commands\WhoIsStepan.cs" />
     <Compile Include="Parameters\EmptyParameters.cs" />
     <Compile Include="Parameters\IParameters.cs" />
     <Compile Include="Parameters\IParametersHandler.cs" />

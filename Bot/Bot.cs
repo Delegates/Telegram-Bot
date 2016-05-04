@@ -33,7 +33,12 @@ namespace Bot
 
         public IReadOnlyList<ICommand> CommandList => commandList.AsReadOnly(); 
 
-        public string ExecuteCommand(string command, params string[] args) => nameToCommand[command].Execute(args);
+        public string ExecuteCommand(string command, params string[] args)
+        {
+            var cmd = command.ToLower();
+            if (!nameToCommand.ContainsKey(cmd)) return "WoW so unusual much unknown letters";
+            return nameToCommand[cmd].Execute(args);
+        }
 
     }
 }

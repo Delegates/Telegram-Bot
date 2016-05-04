@@ -17,13 +17,13 @@ namespace Bot.Commands
             this.bot = bot;
         }
 
-        public override string Name => "Help";
+        public override string Name => "help";
         public override string Description => "Выводит список доступных команд";
 
         public override string Execute(EmptyParameters parameters)
         {
             var stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine("Доступные команды у бота:");
+            stringBuilder.AppendLine("Доступные команды у Doge:");
             foreach (var command in bot.CommandList)
             {
                 stringBuilder.Append(command.Name);
