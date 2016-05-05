@@ -55,21 +55,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bot\MessageHandler\MessageHandler.cs" />
     <Compile Include="Bot\Start.cs" />
     <Compile Include="Bot\TelegramBot.cs" />
     <Compile Include="Bot\FileLoader.cs" />
+    <Compile Include="Bot\MessageHandler\Commands\Help.cs" />
+    <Compile Include="Bot\MessageHandler\Commands\ICommand.cs" />
+    <Compile Include="Bot\MessageHandler\Commands\ParametrizedCommand.cs" />
+    <Compile Include="Bot\MessageHandler\Commands\Timetable\Lesson.cs" />
+    <Compile Include="Bot\MessageHandler\Commands\Timetable\Timetable.cs" />
+    <Compile Include="Bot\MessageHandler\Commands\WhoIsStepan.cs" />
+    <Compile Include="Bot\MessageHandler\Parameters\EmptyParameters.cs" />
+    <Compile Include="Bot\MessageHandler\Parameters\IParameters.cs" />
+    <Compile Include="Bot\MessageHandler\Parameters\IParametersHandler.cs" />
+    <Compile Include="Bot\MessageHandler\Parameters\ParametersHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Bot\Bot.csproj">
-      <Project>{cb8db65f-a45e-457e-a9c2-c0cdd96092b7}</Project>
-      <Name>Bot</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

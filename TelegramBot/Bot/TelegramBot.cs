@@ -10,20 +10,17 @@ namespace TelegramBot
     {
         private string Token { get; }
         public string CommandPrefix { get; set; }
-        private readonly Bot.Bot commandBot;
+        private readonly Bot.MessageHandler messageHandler;
         private readonly Api api;
-        public event Action MessageReceived;
+        public event Action<Update> MessageReceived;
 
-        public TelegramBot(string token, Bot.Bot commandBot, string commandPrefix = @"/")
+        public TelegramBot(string token, Bot.MessageHandler messageHandler, string commandPrefix = @"/")
         {
             Token = token;
-            this.commandBot = commandBot;
+            this.messageHandler = messageHandler;
             api = new Api(token);
-            api.MessageReceived += (sender, args) =>
-            {
-                MessageHandler(args.Message);
-                MessageReceived?.Invoke();
-            };
+            api.MessageReceived += (sender, args) => MessageHandler(args.Message);
+            api.UpdateReceived += (sender, args) => MessageReceived?.Invoke(args.Update);
             CommandPrefix = commandPrefix;
         }
 
@@ -45,7 +42,7 @@ namespace TelegramBot
             if (!message.Text.StartsWith(CommandPrefix)) return;
             var command = message.Text.Remove(0, CommandPrefix.Length)
                 .Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-            api.SendTextMessage(message.Chat.Id, commandBot.ExecuteCommand(command[0], command.Skip(1).ToArray()));
+            api.SendTextMessage(message.Chat.Id, messageHandler.ExecuteCommand(command[0], command.Skip(1).ToArray()));
         }
 
         public void Start()

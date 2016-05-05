@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace Bot
 {
-    public class Bot
+    public class MessageHandler
     {
         private readonly List<ICommand> commandList;
         private readonly Dictionary<string, ICommand> nameToCommand = new Dictionary<string, ICommand>(); 
 
-        public Bot()
+        public MessageHandler()
         {
             commandList = new List<ICommand>();
         }
 
-        public Bot(params ICommand[] commands)
+        public MessageHandler(params ICommand[] commands)
         {
             AddCommands(commands);
         }
 
-        public Bot AddCommands(params ICommand[] commands)
+        public MessageHandler AddCommands(params ICommand[] commands)
         {
             foreach (var command in commands)
             {

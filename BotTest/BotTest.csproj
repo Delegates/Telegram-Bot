@@ -41,13 +41,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bot\Bot.csproj">
-      <Project>{cb8db65f-a45e-457e-a9c2-c0cdd96092b7}</Project>
-      <Name>Bot</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\TelegramBot\TelegramBot.csproj">
+      <Project>{772a8358-6308-4d77-931c-d7bc28d9d165}</Project>
+      <Name>TelegramBot</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

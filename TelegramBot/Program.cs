@@ -12,19 +12,19 @@ namespace TelegramBot
     {
         static void Main(string[] args)
         {
-            var commandBot = new Bot.Bot();
+            var messageHandler = new Bot.MessageHandler();
             var commandList = new ICommand[]
             {
-                new Help(commandBot),
+                new Help(messageHandler),
                 new Start(),
                 new Timetable(),
                 new WhoIsStepan()
             };
-            commandBot.AddCommands(commandList);
-            var bot = new TelegramBot("182754992:AAH-OI66_6Xs4Zqo3KqI74TlGb6CLiXPqXI", commandBot);
+            messageHandler.AddCommands(commandList);
+            var bot = new TelegramBot("182754992:AAH-OI66_6Xs4Zqo3KqI74TlGb6CLiXPqXI", messageHandler);
             bot.Start();
             Console.WriteLine("Doge приветствует вас");
-            bot.MessageReceived += () => Console.WriteLine("WoW new message : " + DateTime.Now);
+            bot.MessageReceived += (update) => Console.WriteLine($"WoW new message : {DateTime.Now.ToString("T")} Type: {update.Type}");
             Console.ReadLine();
         }
     }

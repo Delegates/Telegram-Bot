@@ -9,9 +9,9 @@ namespace BotTest
         [Test]
         public void TestHelpCommand()
         {
-            var bot = new Bot.Bot();
-            bot.AddCommands(new Bot.Commands.Help(bot));
-            Assert.AreEqual($"Доступные команды у бота:{Environment.NewLine}Help | Выводит список доступных команд{Environment.NewLine}", bot.ExecuteCommand("Help"));
+            var messageHandler = new Bot.MessageHandler();
+            messageHandler.AddCommands(new Bot.Commands.Help(messageHandler));
+            Assert.AreEqual($"Доступные команды у Doge:{Environment.NewLine}help | Выводит список доступных команд{Environment.NewLine}", messageHandler.ExecuteCommand("Help"));
         }
     }
 }
