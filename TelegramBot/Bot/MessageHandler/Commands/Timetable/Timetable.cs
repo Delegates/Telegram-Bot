@@ -50,11 +50,17 @@ namespace Bot.Commands
                 DayOfWeek.Friday, 
                 new List<Lesson>
                 {
-                    new Lesson("ООП", DateTime.Parse("9:20:00"), new TimeSpan(1, 30, 0)),
-                    new Lesson("Комбинаторные алгоритмы", DateTime.Parse("10:30:00"), new TimeSpan(1, 30, 0)),
+                    new Lesson("ООП", DateTime.Parse("9:20:00"), new TimeSpan(1, 10, 0)),
+                    new Lesson("Комбинаторные алгоритмы", DateTime.Parse("10:40:00"), new TimeSpan(1, 30, 0)),
                     new Lesson("Теорвер", DateTime.Parse("12:50:00"), new TimeSpan(1, 30, 0)),
                     new Lesson("Комбинаторные алгоритмы", DateTime.Parse("14:30:00"), new TimeSpan(1, 30, 0))
                 }
+            },
+            {
+                DayOfWeek.Saturday, new List<Lesson>()
+            },
+            {
+                DayOfWeek.Sunday, new List<Lesson>()
             }
         };
         #endregion

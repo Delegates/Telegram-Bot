@@ -22,7 +22,9 @@ namespace Bot.Commands
 
         public override string ToString()
         {
-            return $"{Name} Начало: {Start} Конец: {Ending}";
+            return $"{Name} {Start.ToString("t")} - {Ending.ToString("t")}";
         }
+
+
     }
 }

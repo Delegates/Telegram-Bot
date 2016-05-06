@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bot\MessageHandler\Commands\Timetable\Next.cs" />
     <Compile Include="Bot\MessageHandler\MessageHandler.cs" />
     <Compile Include="Bot\Start.cs" />
     <Compile Include="Bot\TelegramBot.cs" />

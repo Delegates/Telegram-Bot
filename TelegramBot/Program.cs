@@ -18,7 +18,8 @@ namespace TelegramBot
                 new Help(messageHandler),
                 new Start(),
                 new Timetable(),
-                new WhoIsStepan()
+                new WhoIsStepan(),
+                new Next()
             };
             messageHandler.AddCommands(commandList);
             var bot = new TelegramBot("182754992:AAH-OI66_6Xs4Zqo3KqI74TlGb6CLiXPqXI", messageHandler);
