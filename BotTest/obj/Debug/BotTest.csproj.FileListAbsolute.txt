@@ -1,0 +1,15 @@
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\obj\Debug\BotTest.csprojResolveAssemblyReference.cache
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\BotTest.dll
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\BotTest.pdb
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\nunit.framework.dll
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\TelegramBot.exe
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\Telegram.Bot.dll
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\TelegramBot.pdb
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\nunit.framework.xml
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\obj\Debug\BotTest.dll
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\obj\Debug\BotTest.pdb
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\Telegram.Bot.xml
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Андрей\Desktop\zadachi\github\Telegram-Bot\BotTest\bin\Debug\System.Net.Http.Formatting.xml

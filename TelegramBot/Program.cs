@@ -12,7 +12,7 @@ namespace TelegramBot
     {
         static void Main(string[] args)
         {
-            var messageHandler = new Bot.MessageHandler();
+            var messageHandler = new MessageHandler();
             var commandList = new ICommand[]
             {
                 new Help(messageHandler),
