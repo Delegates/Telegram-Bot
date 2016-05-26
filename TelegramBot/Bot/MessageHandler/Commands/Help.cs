@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bot.Parameters;
+using TelegramBot.Handler;
 
 
 namespace Bot.Commands
 {
     public class Help : ParametrizedCommand<EmptyParameters>
     {
-        private readonly MessageHandler bot;
+        private readonly TextMessageHandler bot;
 
-        public Help(MessageHandler bot)
+        public Help(TextMessageHandler bot)
         {
             this.bot = bot;
         }

@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\Bot\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
@@ -55,8 +56,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\TelegramApi.cs" />
+    <Compile Include="Api\Update.cs" />
+    <Compile Include="Bot\MessageHandler\Commands\Time.cs" />
     <Compile Include="Bot\MessageHandler\Commands\Timetable\Next.cs" />
+    <Compile Include="Bot\MessageHandler\IMessageHandler.cs" />
+    <Compile Include="Bot\MessageHandler\LocationMessageHandler.cs" />
     <Compile Include="Bot\MessageHandler\MessageHandler.cs" />
+    <Compile Include="Bot\MessageHandler\PhotoMessageHandler.cs" />
+    <Compile Include="Bot\MessageHandler\TextMessageHandler.cs" />
     <Compile Include="Bot\Start.cs" />
     <Compile Include="Bot\TelegramBot.cs" />
     <Compile Include="Bot\FileLoader.cs" />
@@ -70,6 +78,8 @@
     <Compile Include="Bot\MessageHandler\Parameters\IParameters.cs" />
     <Compile Include="Bot\MessageHandler\Parameters\IParametersHandler.cs" />
     <Compile Include="Bot\MessageHandler\Parameters\ParametersHandler.cs" />
+    <Compile Include="Bot\UpdateHandler.cs" />
+    <Compile Include="Api\IApi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
