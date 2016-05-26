@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using TelegramBot.Handler;
 
 namespace BotTest
 {
@@ -9,7 +10,7 @@ namespace BotTest
         [Test]
         public void TestHelpCommand()
         {
-            var messageHandler = new Bot.MessageHandler();
+            var messageHandler = new TextMessageHandler();
             messageHandler.AddCommands(new Bot.Commands.Help(messageHandler));
             Assert.AreEqual($"Доступные команды у Doge:{Environment.NewLine}help | Выводит список доступных команд{Environment.NewLine}", messageHandler.ExecuteCommand("Help"));
         }
