@@ -10,10 +10,10 @@ namespace TelegramBot
 {
     class FileLoader
     {
-        public static Telegram.Bot.Api LoadApi(string fileName)
+        public static Api LoadApi(string fileName)
         {
             var token = File.ReadAllLines(fileName)[0].Split(new []{' '}, StringSplitOptions.RemoveEmptyEntries)[1];
-            return new Telegram.Bot.Api(token);
+            return new Api(token);
         }
 
         //public static Bot.Bot LoadCommands(string fileName)
