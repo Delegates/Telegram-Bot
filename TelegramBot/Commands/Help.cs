@@ -11,9 +11,9 @@ namespace Bot.Commands
 {
     public class Help : ParametrizedCommand<EmptyParameters>
     {
-        private readonly TextMessageHandler bot;
+        private readonly TextHandler bot;
 
-        public Help(TextMessageHandler bot)
+        public Help(TextHandler bot)
         {
             this.bot = bot;
         }

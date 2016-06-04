@@ -10,7 +10,7 @@ namespace BotTest
         [Test]
         public void TestHelpCommand()
         {
-            var messageHandler = new TextMessageHandler();
+            var messageHandler = new TextHandler();
             messageHandler.AddCommands(new Bot.Commands.Help(messageHandler));
             Assert.AreEqual($"Доступные команды у Doge:{Environment.NewLine}help | Выводит список доступных команд{Environment.NewLine}", messageHandler.ExecuteCommand("Help"));
         }

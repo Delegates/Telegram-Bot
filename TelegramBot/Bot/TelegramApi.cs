@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Telegram.Bot.Types;
+using UniveralBot;
+using Message = UniveralBot.Message;
+using User = Telegram.Bot.Types.User;
 
 namespace TelegramBot.Api
 {
@@ -14,36 +17,29 @@ namespace TelegramBot.Api
             api = new Telegram.Bot.Api(token);
             api.UpdateReceived += (sender, args) =>
             {
-                UpdateReceived?.Invoke(sender, args);
+                MessageReceived?.Invoke(sender, args);
             };
+
+            Me = new UniveralBot.User(api.GetMe().Result.Username);
         }
 
         private readonly Telegram.Bot.Api api;
-        public event EventHandler<UpdateEventArgs> UpdateReceived;
-        public Task<User> GetMe()
-        {
-            return api.GetMe();
-        }
+
+
+        public event EventHandler<Message> MessageReceived;
+
+        public UniveralBot.User Me { get; }
 
         public void StartReceiving()
         {
             api.StartReceiving();
         }
 
-        public void SendTextMessage(long id, string text)
+        public void SendMessage(Message message)
         {
-            api.SendTextMessage(id, text);
+            api.
         }
 
-        public void SendPhoto(long id, FileToSend fileToSend)
-        {
-            api.SendPhoto(id, fileToSend);
-        }
 
-        public void SendUpdate(Update update)
-        {
-            throw new NotImplementedException();
-
-        }
     }
 }
