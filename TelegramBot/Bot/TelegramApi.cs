@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 using Telegram.Bot.Types;
 using UniveralBot;
 using Message = UniveralBot.Message;
+using MessageType = UniveralBot.MessageType;
 using User = Telegram.Bot.Types.User;
 
 namespace TelegramBot.Api
 {
-    class TelegramApi : IApi
+    class TelegramApi : IApi<Message>
     {
         public TelegramApi(string token)
         {
             api = new Telegram.Bot.Api(token);
-            api.UpdateReceived += (sender, args) =>
+            api.UpdateReceived += (sender, updateEventArgs) =>
             {
-                MessageReceived?.Invoke(sender, args);
+                MessageReceived?.Invoke(sender, Converter.UpdateToMessage(updateEventArgs.Update));
             };
 
             Me = new UniveralBot.User(api.GetMe().Result.Username);
@@ -35,11 +36,26 @@ namespace TelegramBot.Api
             api.StartReceiving();
         }
 
+
         public void SendMessage(Message message)
-        {
-            api.
+        {            
+            if (message.Type == MessageType.Location)
+            {
+                var location = (Location)message.Data;
+                api.SendLocation(message.ChatId, location.Latitude, location.Longitude);
+            }
+            if (message.Type == MessageType.Photo)
+            {
+                var photo = (FileToSend)message.Data;
+                api.SendPhoto(message.ChatId, photo);
+            }
+            if (message.Type == MessageType.Text)
+            {
+                var text = (string)message.Data;
+                api.SendTextMessage(message.ChatId, text);
+            }
         }
 
-
+       
     }
 }

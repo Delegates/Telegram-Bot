@@ -56,6 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bot\Message.cs" />
     <Compile Include="MessageHandler\LocationHandler.cs" />
     <Compile Include="MessageHandler\MessageHandler.cs" />
     <Compile Include="MessageHandler\PhotoHandler.cs" />
@@ -70,14 +71,13 @@
     <Compile Include="Commands\Timetable\Lesson.cs" />
     <Compile Include="Commands\Timetable\Next.cs" />
     <Compile Include="Commands\Timetable\Timetable.cs" />
-    <Compile Include="Commands\WhoIsStepan.cs" />
     <Compile Include="Parameters\EmptyParameters.cs" />
     <Compile Include="Parameters\IParameters.cs" />
     <Compile Include="Parameters\IParametersHandler.cs" />
     <Compile Include="Parameters\ParametersHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpdateToMessageConverter.cs" />
+    <Compile Include="Bot\Converter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

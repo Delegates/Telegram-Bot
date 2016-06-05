@@ -15,10 +15,5 @@ namespace TelegramBot
             var token = File.ReadAllLines(fileName)[0].Split(new []{' '}, StringSplitOptions.RemoveEmptyEntries)[1];
             return new Telegram.Bot.Api(token);
         }
-
-        //public static Bot.Bot LoadCommands(string fileName)
-        //{
-            
-        //}
     }
 }

@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IApi.cs" />
-    <Compile Include="Message.cs" />
     <Compile Include="Bot.cs" />
     <Compile Include="User.cs" />
     <Compile Include="IMessageHandler.cs" />

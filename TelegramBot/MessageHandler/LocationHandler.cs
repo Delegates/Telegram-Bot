@@ -11,11 +11,9 @@ namespace TelegramBot.Handler
 {
     public class LocationHandler 
     {
-        public UniveralBot.Message ProcessTheMessage(Location message)
-        {
-         //   api.SendTextMessage(message.Chat.Id, "wow such map much location");
-        
-            return new UniveralBot.Message(UniveralBot.MessageType.Text, "wow such map much location");
+        public UniveralBot.Message ProcessTheMessage(Location message,string chatId)
+        {          
+            return new UniveralBot.Message(UniveralBot.MessageType.Text, "wow such map much location",chatId);
         }
     }
 }

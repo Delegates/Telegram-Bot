@@ -9,6 +9,7 @@ using Bot.Commands;
 using Telegram.Bot;
 using TelegramBot.Api;
 using TelegramBot.Handler;
+using UniveralBot;
 
 namespace TelegramBot
 {
@@ -16,23 +17,24 @@ namespace TelegramBot
     {
         static void Main(string[] args)
         {
-            var textMessageHandler = new TextHandler();
+            Bot<Message> bot = null;
+                     
+            var lazy = new Lazy<TextHandler>(() => new TextHandler(bot.me));
+            bot = new Bot<Message>(new MessageHandler(lazy,new PhotoHandler(), new LocationHandler()),new TelegramApi("182754992:AAH-OI66_6Xs4Zqo3KqI74TlGb6CLiXPqXI"));
             var commandList = new ICommand[]
             {
-                new Help(textMessageHandler),
+                new Help(lazy),
                 new Start(),
                 new Timetable(),
                 new Time(),
                 new Next()
             };
 
-            textMessageHandler.AddCommands(commandList);
-            var locationMessageHandler = new LocationHandler();
-            var photoMessageHandler = new PhotoHandler();
-            var bot = new TelegramBot(textMessageHandler,photoMessageHandler, locationMessageHandler, new TelegramApi("182754992:AAH-OI66_6Xs4Zqo3KqI74TlGb6CLiXPqXI"));
+            lazy.Value.AddCommands(commandList);
+       
             bot.Start();
             Console.WriteLine("Doge приветствует вас");
-            bot.MessageReceived += (update) => Console.WriteLine($"WoW new message : {DateTime.Now.ToString("T")} Type: {update.Type} Текст{update.Message.Text}");
+            bot.MessageReceived += (update) => Console.WriteLine($"WoW new message : {DateTime.Now.ToString("T")} Type: {update.Type} Текст{update.Data}");
             Console.ReadLine();
         }
     }

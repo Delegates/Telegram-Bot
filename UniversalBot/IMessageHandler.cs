@@ -1,7 +1,7 @@
 ﻿namespace UniveralBot
 {
-    public interface IMessageHandler
+    public interface IMessageHandler<TMessage>
     {
-        Message ProcessTheMessage(Message message);
+        TMessage ProcessTheMessage(TMessage message);
     }
 }

@@ -7,11 +7,9 @@ namespace TelegramBot.Handler
     public class PhotoHandler
     {
 
-        public UniveralBot.Message ProcessTheMessage(Image message)
+        public UniveralBot.Message ProcessTheMessage(Image message, string chatId)
         {
-            //   api.SendTextMessage(message.Chat.Id, "wow such map much location");
-
-            return new UniveralBot.Message(UniveralBot.MessageType.Text, "wow such cool photo");
+            return new UniveralBot.Message(UniveralBot.MessageType.Text, "wow such cool photo",chatId);
         }
     }
 }

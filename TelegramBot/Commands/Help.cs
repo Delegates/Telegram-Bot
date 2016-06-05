@@ -11,9 +11,9 @@ namespace Bot.Commands
 {
     public class Help : ParametrizedCommand<EmptyParameters>
     {
-        private readonly TextHandler bot;
+        private readonly Lazy<TextHandler> bot;
 
-        public Help(TextHandler bot)
+        public Help(Lazy<TextHandler> bot)
         {
             this.bot = bot;
         }
@@ -25,7 +25,7 @@ namespace Bot.Commands
         {
             var stringBuilder = new StringBuilder();
             stringBuilder.AppendLine("Доступные команды у Doge:");
-            foreach (var command in bot.CommandList)
+            foreach (var command in bot.Value.CommandList)
             {
                 stringBuilder.Append(command.Name);
                 stringBuilder.Append(" | ");
